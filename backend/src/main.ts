@@ -12,7 +12,7 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin:  '*',
+    origin:  process.env.FRONTEND_HOST,
     methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
     credentials: true,
   });
