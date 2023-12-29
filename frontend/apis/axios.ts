@@ -6,7 +6,7 @@ config();
 const baseURL = process.env.NEXT_PUBLIC_BACKEND_HOST;
 axios.defaults.baseURL = baseURL;
 
-axios.defaults.headers.common["Access-Control-Allow-Origin"] = ;
+axios.defaults.headers.common["Access-Control-Allow-Origin"] = '*';
 axios.defaults.headers.common["Content-Type"] =  'application/json';
 axios.defaults.withCredentials = true;
 
