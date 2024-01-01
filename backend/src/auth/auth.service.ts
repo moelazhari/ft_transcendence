@@ -37,6 +37,8 @@ config();
           httpOnly: true,
           maxAge: 604800000,
           secure: true,
+          domain: '.onrender.com',
+          path: '/',
         });
         res.clearCookie('signin_token');
       }
@@ -53,6 +55,8 @@ config();
             httpOnly: true,
             maxAge: 604800000,
             secure: true,
+            domain: '.onrender.com',
+            path: '/',
           });
           
         }
@@ -64,6 +68,8 @@ config();
             httpOnly: true,
             maxAge: 604800000,
             secure: true,
+            domain: '.onrender.com',
+            path: '/',
           });
           
         }
@@ -75,6 +81,8 @@ config();
             httpOnly: true,
             maxAge: 604800000,
             secure: true,
+            domain: '.onrender.com',
+            path: '/',
           });
         }
         res.redirect(process.env.FRONTEND_HOST);
@@ -133,6 +141,8 @@ config();
         httpOnly: true,
         maxAge: 604800000,
         secure: true,
+        domain: '.onrender.com',
+        path: '/',
       });
 
       return {valid: true, message: 'Valid 2FA code'};
@@ -148,6 +158,8 @@ config();
         httpOnly: true,
         maxAge: 604800000,
         secure: true,
+        domain: '.onrender.com',
+        path: '/',
       });
       
       res.clearCookie('tow_fact_token');
