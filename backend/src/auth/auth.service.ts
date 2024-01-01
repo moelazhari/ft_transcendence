@@ -35,10 +35,7 @@ config();
         const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});
         res.cookie('access_token', token, {
           httpOnly: true,
-          maxAge: 604800000,
-          secure: true,
           domain: '.onrender.com',
-          path: '/',
         });
         res.clearCookie('signin_token');
       }
@@ -53,10 +50,7 @@ config();
           
           await res.cookie('signin_token', token, {
             httpOnly: true,
-            maxAge: 604800000,
-            secure: true,
             domain: '.onrender.com',
-            path: '/',
           });
           
         }
@@ -66,10 +60,7 @@ config();
           
           await res.cookie('access_token', token, {
             httpOnly: true,
-            maxAge: 604800000,
-            secure: true,
             domain: '.onrender.com',
-            path: '/',
           });
           
         }
@@ -79,10 +70,7 @@ config();
           const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});
           await res.cookie('tow_fact_token', token, {
             httpOnly: true,
-            maxAge: 604800000,
-            secure: true,
             domain: '.onrender.com',
-            path: '/',
           });
         }
         res.redirect(process.env.FRONTEND_HOST);
@@ -139,10 +127,7 @@ config();
       const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});  
       res.cookie('access_token', token, {
         httpOnly: true,
-        maxAge: 604800000,
-        secure: true,
         domain: '.onrender.com',
-        path: '/',
       });
 
       return {valid: true, message: 'Valid 2FA code'};
@@ -156,10 +141,7 @@ config();
       
       res.cookie('access_token', token, {
         httpOnly: true,
-        maxAge: 604800000,
-        secure: true,
         domain: '.onrender.com',
-        path: '/',
       });
       
       res.clearCookie('tow_fact_token');
