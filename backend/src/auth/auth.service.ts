@@ -73,7 +73,7 @@ config();
             maxAge: 604800000,
           });
         }
-        res.redirect(process.env.NEXT_PUBLIC_FRONTEND_HOST);
+        res.redirect(process.env.FRONTEND_HOST);
       }
       
       async logout(id: number, res: Response) {
