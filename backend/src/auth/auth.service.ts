@@ -36,6 +36,7 @@ config();
         res.cookie('access_token', token, {
           httpOnly: true,
           maxAge: 604800000,
+          secure: true,
         });
         res.clearCookie('signin_token');
       }
@@ -51,6 +52,7 @@ config();
           await res.cookie('signin_token', token, {
             httpOnly: true,
             maxAge: 604800000,
+            secure: true,
           });
           
         }
@@ -61,6 +63,7 @@ config();
           await res.cookie('access_token', token, {
             httpOnly: true,
             maxAge: 604800000,
+            secure: true,
           });
           
         }
@@ -71,6 +74,7 @@ config();
           await res.cookie('tow_fact_token', token, {
             httpOnly: true,
             maxAge: 604800000,
+            secure: true,
           });
         }
         res.redirect(process.env.FRONTEND_HOST);
@@ -128,6 +132,7 @@ config();
       res.cookie('access_token', token, {
         httpOnly: true,
         maxAge: 604800000,
+        secure: true,
       });
 
       return {valid: true, message: 'Valid 2FA code'};
@@ -142,6 +147,7 @@ config();
       res.cookie('access_token', token, {
         httpOnly: true,
         maxAge: 604800000,
+        secure: true,
       });
       
       res.clearCookie('tow_fact_token');
