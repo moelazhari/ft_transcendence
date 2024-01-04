@@ -50,7 +50,7 @@ config();
           
           await res.cookie('signin_token', token, {
             httpOnly: true,
-            domain: '.onrender.com',
+            // domain: '.onrender.com',
           });
           
         }
@@ -147,3 +147,5 @@ config();
       res.clearCookie('tow_fact_token');
     }
 }
+
+//this attempt to set thecoohie via set-cookie  header was blocked because its Domain attribute was invalid with regards to the curent host url .
