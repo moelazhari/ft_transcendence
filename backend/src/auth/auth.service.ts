@@ -50,7 +50,7 @@ config();
           
           await res.cookie('signin_token', token, {
             httpOnly: true,
-            // domain: '.onrender.com',
+            domain: 'ft-transcendence.onrender.com',
           });
           
         }
