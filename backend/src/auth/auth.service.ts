@@ -35,7 +35,7 @@ config();
         const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});
         res.cookie('access_token', token, {
           httpOnly: true,
-          domain: '.onrender.com',
+          domain: '.vercel.app',
         });
         res.clearCookie('signin_token');
       }
@@ -50,7 +50,7 @@ config();
           
           await res.cookie('signin_token', token, {
             httpOnly: true,
-            domain: 'ft-transcendence.onrender.com',
+            domain: '.vercel.app',
           });
           
         }
@@ -60,7 +60,7 @@ config();
           
           await res.cookie('access_token', token, {
             httpOnly: true,
-            domain: '.onrender.com',
+            domain: '.vercel.app',
           });
           
         }
@@ -70,7 +70,7 @@ config();
           const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});
           await res.cookie('tow_fact_token', token, {
             httpOnly: true,
-            domain: '.onrender.com',
+            domain: '.vercel.app',
           });
         }
         res.redirect(process.env.FRONTEND_HOST);
@@ -127,7 +127,7 @@ config();
       const token = await this.jwtService.signAsync(payload, {secret: process.env.ACCESS_TOKEN_SECRET, expiresIn: process.env.ACCESS_TOKEN_EXP_D});  
       res.cookie('access_token', token, {
         httpOnly: true,
-        domain: '.onrender.com',
+        domain: '.vercel.app',
       });
 
       return {valid: true, message: 'Valid 2FA code'};
@@ -141,11 +141,9 @@ config();
       
       res.cookie('access_token', token, {
         httpOnly: true,
-        domain: '.onrender.com',
+        domain: '.vercel.app',
       });
       
       res.clearCookie('tow_fact_token');
     }
 }
-
-//this attempt to set thecoohie via set-cookie  header was blocked because its Domain attribute was invalid with regards to the curent host url .
